@@ -2,19 +2,34 @@ package group4.restservice.models;
 
 public class User
 {
-  private String username, password;
+  private String userName, password;
   private int id;
 
-  public User(String username, String password, int id)
+  public User(String userName, String password, int id)
   {
-    this.username = username;
+    this.userName = userName;
     this.password = password;
     this.id = id;
   }
 
-  public String getUsername()
+  public void setUserName(String userName)
   {
-    return username;
+    this.userName = userName;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
+  }
+
+  public void setId(int id)
+  {
+    this.id = id;
+  }
+
+  public String getUserName()
+  {
+    return userName;
   }
 
   public String getPassword()
