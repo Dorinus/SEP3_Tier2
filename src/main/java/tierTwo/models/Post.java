@@ -1,4 +1,4 @@
-package group4.restservice.models;
+package tierTwo.models;
 
 public class Post {
 

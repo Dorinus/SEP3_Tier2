@@ -1,8 +1,8 @@
-package group4.restservice.Services;
+package tierTwo.Services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import group4.restservice.models.User;
+import tierTwo.models.User;
 
 import java.io.IOException;
 import java.net.URI;
@@ -32,6 +32,7 @@ public class UserService implements IUserServices
 
     System.out.println(user.getUserName());
     return user;
+    
 
   }
 

@@ -1,6 +1,6 @@
-package group4.restservice.Services;
+package tierTwo.Services;
 
-import group4.restservice.models.User;
+import tierTwo.models.User;
 
 import java.io.IOException;
 
