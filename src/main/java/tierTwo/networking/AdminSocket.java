@@ -1,5 +1,6 @@
 package tierTwo.networking;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tierTwo.models.Bidding;
