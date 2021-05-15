@@ -2,7 +2,7 @@ package tierTwo.Services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import tierTwo.models.User;
+import tierTwo.models.user.User;
 
 import java.io.IOException;
 import java.net.URI;

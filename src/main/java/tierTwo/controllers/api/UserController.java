@@ -1,15 +1,14 @@
-package tierTwo.controllers.websockets;
+package tierTwo.controllers.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tierTwo.models.User;
+import tierTwo.models.user.User;
 
 import java.util.List;
 
 @CrossOrigin(origins="*")
 @RestController
-@RequestMapping("/manager")
-@RequestMapping("/administrator")
+@RequestMapping({"/manager", "/administrator"})
 
 public class UserController
 {
@@ -17,8 +16,8 @@ public class UserController
   UserController userController;
 
    @GetMapping("/manager")
-  public @RequestBody List<User> getUsers(@RequestParam("limit") int limit, @RequestParam("skipped") int skipped)
+  public @ResponseBody List<User> getUsers(@RequestParam("limit") int limit, @RequestParam("skipped") int skipped)
    {
-     System.out.println();
+
    }
 }

@@ -1,5 +1,5 @@
 package tierTwo.networking;
 
-public class UserSocket
+public interface IManagerSocket
 {
 }

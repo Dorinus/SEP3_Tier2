@@ -1,6 +1,6 @@
 package tierTwo.Services;
 
-import tierTwo.models.User;
+import tierTwo.models.user.User;
 
 import java.io.IOException;
 

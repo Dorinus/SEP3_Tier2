@@ -1,4 +1,4 @@
-package tierTwo.models;
+package tierTwo.models.user;
 
 public class PersonalInfo
 {
