@@ -3,6 +3,7 @@ package tierTwo.networking;
 import com.google.gson.Gson;
 import org.apache.catalina.connector.Request;
 import org.springframework.stereotype.Component;
+import tierTwo.models.ActionType;
 import tierTwo.models.ActualRequest;
 
 import java.io.IOException;
