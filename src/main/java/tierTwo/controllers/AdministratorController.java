@@ -1,14 +1,14 @@
-package tierTwo.controllers.api;
+package tierTwo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tierTwo.Services.AdministratorService;
+import tierTwo.Services.administrator.AdministratorService;
 
-@CrossOrigin(origins="*")
+
 @RestController
-@RequestMapping("/")
+@RequestMapping("/admin")
 
 public class AdministratorController
 {

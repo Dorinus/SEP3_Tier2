@@ -1,5 +1,5 @@
 package tierTwo.models.user;
-
+//Component
 public class PersonalInfo
 {
   private String firstName, lastName, dob, email, card, cardDate, address, postalIndex;

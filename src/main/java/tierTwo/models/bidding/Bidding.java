@@ -1,4 +1,4 @@
-package tierTwo.models;
+package tierTwo.models.bidding;
 
 import java.util.Date;
 
@@ -9,6 +9,7 @@ public class Bidding
   private String price;
   private int id;
   private Date date;
+  private transient byte[] avatar;
 
   public Bidding(String name, String description, String price, int id, Date date)
   {
@@ -67,5 +68,10 @@ public class Bidding
   public void setDate()
   {
     this.date = date;
+  }
+
+  public void setAvatar(byte[] avatar)
+  {
+    this.avatar = avatar;
   }
 }
