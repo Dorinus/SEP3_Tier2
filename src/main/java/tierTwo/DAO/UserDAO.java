@@ -17,5 +17,12 @@ public class UserDAO implements IUserDAO
 
     Request response = handler.messageExchange(login);
     System.out.println(" from dao up to the service " + response);
+
+    if(response.getStr().equals("CheckLogin"))
+    {
+      System.out.println("Successfully logged in");
+      return (User) login.getObject();
+    }
+    else throw new Exception((String) response.getObject());
   }
 }
