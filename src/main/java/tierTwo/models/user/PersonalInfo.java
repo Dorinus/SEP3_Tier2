@@ -1,11 +1,27 @@
 package tierTwo.models.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PersonalInfo
 {
-  private String firstName, lastName, dob, email, card, cardDate, address, postalIndex;
+  @JsonProperty("firstName")
+  private String firstName;
+  @JsonProperty("lastName")
+  private String lastName;
+  @JsonProperty("dob")
+  private String dob;
+  @JsonProperty("card")
+  private String card;
+  @JsonProperty("cardDate")
+  private String cardDate;
+  @JsonProperty("email")
+  private String email;
+  @JsonProperty("address")
+  private String address;
+  @JsonProperty("postalIndex")
+  private String postalIndex;
 
   public PersonalInfo(String firstName, String lastName, String dob, String email, String card, String cardDate, String address,
       String postalIndex)

@@ -17,7 +17,7 @@ public class User
   @JsonProperty("id")
   private int id;
 
-  public User()
+  public User(String username, String password, String type, PersonalInfo personalInfo, int id)
   {
     this.username = username;
     this.password = password;

@@ -7,4 +7,5 @@ public interface IUserServices
 {
   User validateUser(User user) throws Exception;
 
+
 }

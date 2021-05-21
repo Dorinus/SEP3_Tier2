@@ -14,7 +14,7 @@ public class RestServiceApplication {
 	public static void main(String[] args)
 	{
     Handler handler = new Handler();
-    new Thread(() -> handler.run()).start();
+    new Thread(() -> handler).start();
 
     SpringApplication.run(RestServiceApplication.class, args);
 	}

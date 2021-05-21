@@ -13,10 +13,4 @@ public class AdministratorController
 {
   @Autowired User userService;
 
-  public ResponseEntity validateLogin(@RequestParam String username, @RequestParam String password)
-  {
-    User validateUser = new User();
-    validateUser.setUserName(username);
-    validateUser.setPassword(password);
-  }
 }

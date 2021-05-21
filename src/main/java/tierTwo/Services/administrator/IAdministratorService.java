@@ -8,10 +8,10 @@ import java.util.List;
 public interface IAdministratorService
 {
   List<User> getUsers(User user);
-  List<User> addUser(User user);
+  String addUser(User user);
   List<Bidding> addBidding(Bidding bidding);
-  List<Bidding> editBidding(Bidding bidding);
-  List<Bidding> removeBidding(Bidding bidding);
+  String editBidding(Bidding bidding);
+  void removeBidding(Bidding bidding);
   List<Bidding> showBiddings(Bidding bidding);
-  List<Bidding> searchBiddings(Bidding bidding);
+  String searchBiddings(Bidding bidding);
 }
