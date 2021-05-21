@@ -1,5 +1,8 @@
 package tierTwo.models.user;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class LoginCredentials
 {
   private String username;

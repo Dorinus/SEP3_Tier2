@@ -7,40 +7,7 @@ import tierTwo.models.user.User;
 import java.util.List;
 
 @Component
-public class Administrator implements IAdministrator
+public class Administrator
 {
-  @Override public List<User> getAllUsers(User user)
-  {
-    return null;
-  }
 
-  @Override public List<User> addUser(User user)
-  {
-    return null;
-  }
-
-  @Override public List<Bidding> getAllBiddings(Bidding bidding)
-  {
-    return null;
-  }
-
-  @Override public void editBidding(Bidding bidding)
-  {
-
-  }
-
-  @Override public void addBidding(Bidding bidding)
-  {
-
-  }
-
-  @Override public void deleteBidding(Bidding bidding)
-  {
-
-  }
-
-  @Override public void searchBiddings(Bidding bidding)
-  {
-
-  }
 }

@@ -1,12 +1,20 @@
 package tierTwo.models.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
 @Component
-public class User implements IUser
+public class User
 {
-  private String username, password, type;
+  @JsonProperty("username")
+  private String username;
+  @JsonProperty("password")
+  private String password;
+  @JsonProperty("type")
+  private String type;
+  @JsonProperty("personalInfo")
   private PersonalInfo personalInfo;
+  @JsonProperty("id")
   private int id;
 
   public User()
@@ -20,27 +28,27 @@ public class User implements IUser
 
 
 
-  @Override public String getUserName()
+   public String getUserName()
   {
     return username;
   }
 
-  @Override public String getPassword()
+   public String getPassword()
   {
     return password;
   }
 
-  @Override public String getType()
+   public String getType()
   {
     return type;
   }
 
-  @Override public PersonalInfo getPersonalInfo()
+   public PersonalInfo getPersonalInfo()
   {
     return personalInfo;
   }
 
-  @Override public int getId()
+   public int getId()
   {
     return id;
   }

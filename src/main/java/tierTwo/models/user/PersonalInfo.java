@@ -1,5 +1,8 @@
 package tierTwo.models.user;
-//Component
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class PersonalInfo
 {
   private String firstName, lastName, dob, email, card, cardDate, address, postalIndex;

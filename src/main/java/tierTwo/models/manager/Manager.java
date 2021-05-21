@@ -7,21 +7,7 @@ import tierTwo.models.user.User;
 import java.util.List;
 
 @Component
-public class Manager implements IManager
+public class Manager
 {
 
-  @Override public List<User> getAllUsers(User user)
-  {
-    return null;
-  }
-
-  @Override public List<Bidding> getAllBiddings(Bidding bidding)
-  {
-    return null;
-  }
-
-  @Override public void editBidding(Bidding bidding)
-  {
-
-  }
 }
