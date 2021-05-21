@@ -5,16 +5,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
 import java.rmi.NotBoundException;
+import java.util.logging.Handler;
 
 @SpringBootApplication
 public class RestServiceApplication {
 
-	//We start tier 2 here
 
-	public static void main(String[] args) throws IOException, InterruptedException, NotBoundException
+	public static void main(String[] args)
 	{
-		SpringApplication.run(RestServiceApplication.class, args);
+    Handler handler = new Handler();
+    new Thread(() -> handler.run()).start();
 
+    SpringApplication.run(RestServiceApplication.class, args);
 	}
 
 }

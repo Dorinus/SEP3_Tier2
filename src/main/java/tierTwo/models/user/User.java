@@ -1,43 +1,57 @@
 package tierTwo.models.user;
 
-public class User
+import org.springframework.stereotype.Component;
+
+@Component
+public class User implements IUser
 {
-  private String userName, password, type;
+  private String username, password, type;
   private PersonalInfo personalInfo;
   private int id;
 
-  public User(String userName, String password, String type, PersonalInfo personalInfo, int id)
+  public User()
   {
-    this.userName = userName;
+    this.username = username;
     this.password = password;
     this.type = type;
     this.personalInfo = personalInfo;
     this.id = id;
   }
 
-  public String getUserName()
+
+
+  @Override public String getUserName()
   {
-    return userName;
+    return username;
   }
 
-  public void setUserName(String userName)
-  {
-    this.userName = userName;
-  }
-
-  public String getPassword()
+  @Override public String getPassword()
   {
     return password;
   }
 
+  @Override public String getType()
+  {
+    return type;
+  }
+
+  @Override public PersonalInfo getPersonalInfo()
+  {
+    return personalInfo;
+  }
+
+  @Override public int getId()
+  {
+    return id;
+  }
+
+  public void setUserName(String username)
+  {
+    this.username = username;
+  }
   public void setPassword(String password)
   {
     this.password = password;
-  }
-
-  public String getType()
-  {
-    return type;
   }
 
   public void setType(String type)
@@ -45,23 +59,15 @@ public class User
     this.type = type;
   }
 
-  public PersonalInfo getPersonalInfo()
-  {
-    return personalInfo;
-  }
-
   public void setPersonalInfo(PersonalInfo personalInfo)
   {
     this.personalInfo = personalInfo;
-  }
-
-  public int getId()
-  {
-    return id;
   }
 
   public void setId(int id)
   {
     this.id = id;
   }
+
+
 }

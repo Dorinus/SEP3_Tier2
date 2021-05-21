@@ -5,7 +5,6 @@ import tierTwo.models.user.User;
 
 public interface IUserServices
 {
-  User registerUser(User user);
-  Bidding enterBidding();
+  User validateUser(User user) throws Exception;
 
 }

@@ -1,24 +1,19 @@
 package tierTwo.models;
 
+import lombok.Data;
+import org.springframework.stereotype.Component;
 
+
+@Data
+@Component
 public class Request
 {
-  private ActionType actionType;
-  private Object argument;
+  private String str;
+  private Object object;
 
-  public Request(ActionType actionType, Object argument)
+  public Request(String str, Object object)
   {
-    this.actionType = actionType;
-    this.argument = argument;
-  }
-
-  public ActionType getActionType()
-  {
-    return actionType;
-  }
-
-  public Object getArgument()
-  {
-    return argument;
+    this.str = str;
+    this.object = object;
   }
 }

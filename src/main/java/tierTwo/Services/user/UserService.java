@@ -13,9 +13,8 @@ import java.net.http.HttpResponse;
 public class UserService implements IUserServices
 {
 
-  @Override public User registerUser(User user)
+  @Override public User validateUser(User user) throws Exception
   {
     return null;
   }
-
 }

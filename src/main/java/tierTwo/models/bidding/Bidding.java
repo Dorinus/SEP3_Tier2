@@ -9,7 +9,7 @@ public class Bidding
   private String price;
   private int id;
   private Date date;
-  private transient byte[] avatar;
+  private transient byte[] image;
 
   public Bidding(String name, String description, String price, int id, Date date)
   {
@@ -70,8 +70,8 @@ public class Bidding
     this.date = date;
   }
 
-  public void setAvatar(byte[] avatar)
+  public void setAvatar(byte[] image)
   {
-    this.avatar = avatar;
+    this.image = image;
   }
 }
