@@ -42,7 +42,18 @@ public class Handler implements Runnable
 
   @Override public void run()
   {
+    while(true){
+      try{
+        byte[] dataFromClient = new byte[8000];
+        int bytesRead = input.read(dataFromClient, 0, dataFromClient.length);
+        String readObject = new String(dataFromClient);
+        //gson json to object
+        //do whatever with it
+      }
+      catch (Exception e){
 
+      }
+    }
   }
 
   public Request messageExchange(Request objectToSend)
