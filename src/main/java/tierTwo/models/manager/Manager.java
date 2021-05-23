@@ -15,9 +15,29 @@ public class Manager
   @JsonProperty("password")
   private String password;
 
-  public Manager(String username, String password)
+  public Manager()
   {
     this.password = password;
+    this.username = username;
+  }
+
+  public String getUserName()
+  {
+    return username;
+  }
+
+  public String getPassword()
+  {
+    return password;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
+  }
+
+  public void setUsername(String username)
+  {
     this.username = username;
   }
 }

@@ -19,4 +19,24 @@ public class Request
     this.str = str;
     object = null;
   }
+
+  public String getStr()
+  {
+    return str;
+  }
+
+  public void setStr(String str)
+  {
+    this.str = str;
+  }
+
+  public Object getObject()
+  {
+    return object;
+  }
+
+  public void setObject(Object object)
+  {
+    this.object = object;
+  }
 }

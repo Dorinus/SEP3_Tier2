@@ -11,7 +11,7 @@ public class Bidding
   private Date date;
   private transient byte[] image;
 
-  public Bidding(String name, String description, String price, int id, Date date)
+  public Bidding()
   {
     this.date = date;
     this.id = id;
