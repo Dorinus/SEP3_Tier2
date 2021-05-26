@@ -3,18 +3,12 @@ package tierTwo.models.user;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
-@Component
 public class User
 {
-  @JsonProperty("username")
   private String username;
-  @JsonProperty("password")
   private String password;
-  @JsonProperty("type")
   private String type;
-  @JsonProperty("personalInfo")
   private PersonalInfo personalInfo;
-  @JsonProperty("id")
   private int id;
 
   public User()

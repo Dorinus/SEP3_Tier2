@@ -29,7 +29,7 @@ public class ClientConnection implements SocketClient
     try
     {
       Gson gson = new Gson();
-      Socket socket = new Socket("localhost", 8090);
+      Socket socket = new Socket("localhost", 8070);
       OutputStream outputStream = socket.getOutputStream();
       InputStream inputStream = socket.getInputStream();
       String request = gson.toJson(networkRequest);
@@ -50,7 +50,7 @@ public class ClientConnection implements SocketClient
         updatedString += string.charAt(i);
       }
 
-      if(updatedString.equals("conFromTier3"))
+      if(updatedString.equals("\"confirmation from tier3\""))
       {
         return updatedString;
       }

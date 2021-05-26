@@ -11,7 +11,6 @@ import tierTwo.networking.network.NetworkType;
 
 import java.util.List;
 
-@Component
 public class BiddingNetworking implements IBiddingNetworking
 {
   @Autowired SocketClient socketClient;

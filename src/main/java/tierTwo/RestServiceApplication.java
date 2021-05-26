@@ -15,8 +15,8 @@ public class RestServiceApplication {
 
 	public static void main(String[] args)
 	{
-    SocketClient client = new ClientConnection();
-    client.startClient();
+		SocketClient client = new ClientConnection();
+		client.startClient();
     SpringApplication.run(RestServiceApplication.class, args);
 	}
 

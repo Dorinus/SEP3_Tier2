@@ -7,12 +7,9 @@ import tierTwo.models.user.User;
 
 import java.util.List;
 
-@Component
 public class Administrator
 {
-  @JsonProperty("username")
   private String username;
-  @JsonProperty("password")
   private String password;
 
   public Administrator()

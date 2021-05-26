@@ -11,6 +11,5 @@ import tierTwo.models.user.User;
 
 public class AdministratorController
 {
-  @Autowired User userService;
 
 }
