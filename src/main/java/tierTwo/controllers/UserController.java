@@ -8,8 +8,6 @@ import tierTwo.models.user.User;
 @RestController
 public class UserController
 {
-   @Autowired
-  UserController userController;
 
 
    @GetMapping("/login")
