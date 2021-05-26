@@ -2,7 +2,8 @@ package tierTwo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import tierTwo.DAO.Handler;
+import tierTwo.networking.communication.ClientConnection;
+import tierTwo.networking.communication.SocketClient;
 
 import java.io.IOException;
 import java.rmi.NotBoundException;
@@ -14,10 +15,8 @@ public class RestServiceApplication {
 
 	public static void main(String[] args)
 	{
-    Handler handler = new Handler();
-    
-    Thread t1 = new Thread(handler);
-    t1.start();
+    SocketClient client = new ClientConnection();
+    client.startClient();
     SpringApplication.run(RestServiceApplication.class, args);
 	}
 
