@@ -1,59 +1,56 @@
 package tierTwo.models.user;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Component;
-
 public class User
 {
+  private int id;
   private String username;
   private String password;
   private String type;
-  private PersonalInfo personalInfo;
-  private int id;
+  private String firstName;
+  private String lastName;
+  private String dob;
+  private String card;
+  private String cardDate;
+  private String email;
+  private String address;
+  private String postalIndex;
+
 
   public User()
   {
-    this.username = username;
-    this.password = password;
-    this.type = type;
-    this.personalInfo = personalInfo;
-    this.id = id;
   }
 
-
-
-   public String getUserName()
-  {
-    return username;
-  }
-
-   public String getPassword()
-  {
-    return password;
-  }
-
-   public String getType()
-  {
-    return type;
-  }
-
-   public PersonalInfo getPersonalInfo()
-  {
-    return personalInfo;
-  }
-
-   public int getId()
+  public int getId()
   {
     return id;
   }
 
-  public void setUserName(String username)
+
+  public String getUsername()
+  {
+    return username;
+  }
+
+  public void setUsername(String username)
   {
     this.username = username;
   }
+
+
+
+  public String getPassword()
+  {
+    return password;
+  }
+
   public void setPassword(String password)
   {
     this.password = password;
+  }
+
+  public String getType()
+  {
+    return type;
   }
 
   public void setType(String type)
@@ -61,14 +58,84 @@ public class User
     this.type = type;
   }
 
-  public void setPersonalInfo(PersonalInfo personalInfo)
+  public String getFirstName()
   {
-    this.personalInfo = personalInfo;
+    return firstName;
   }
 
-  public void setId(int id)
+  public void setFirstName(String firstName)
   {
-    this.id = id;
+    this.firstName = firstName;
+  }
+
+  public String getLastName()
+  {
+    return lastName;
+  }
+
+  public void setLastName(String lastName)
+  {
+    this.lastName = lastName;
+  }
+
+  public String getDob()
+  {
+    return dob;
+  }
+
+  public void setDob(String dob)
+  {
+    this.dob = dob;
+  }
+
+  public String getCard()
+  {
+    return card;
+  }
+
+  public void setCard(String card)
+  {
+    this.card = card;
+  }
+
+  public String getCardDate()
+  {
+    return cardDate;
+  }
+
+  public void setCardDate(String cardDate)
+  {
+    this.cardDate = cardDate;
+  }
+
+  public String getEmail()
+  {
+    return email;
+  }
+
+  public void setEmail(String email)
+  {
+    this.email = email;
+  }
+
+  public String getAddress()
+  {
+    return address;
+  }
+
+  public void setAddress(String address)
+  {
+    this.address = address;
+  }
+
+  public String getPostalIndex()
+  {
+    return postalIndex;
+  }
+
+  public void setPostalIndex(String postalIndex)
+  {
+    this.postalIndex = postalIndex;
   }
 
 

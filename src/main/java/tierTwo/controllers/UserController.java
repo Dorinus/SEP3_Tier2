@@ -1,8 +1,8 @@
 package tierTwo.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tierTwo.Services.user.UserService;
 import tierTwo.models.user.User;
 
 @RestController
@@ -15,12 +15,8 @@ public class UserController
 
      //call tier3 and get the response
 
-     User user1 = new User();
-     user1.setUserName("admin");
-     user1.setUserName("admin");
-     user1.setType("admin");
 
-     return user1;
+
    }
 
 }
