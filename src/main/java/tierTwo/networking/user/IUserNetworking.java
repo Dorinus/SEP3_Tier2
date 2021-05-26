@@ -4,7 +4,7 @@ import tierTwo.models.user.User;
 
 public interface IUserNetworking
 {
-  User validateUser(String username, String password);
+  User validateUser(User user);
   String register(User user);
   String editUser(User user);
   void deleteUser(int id);

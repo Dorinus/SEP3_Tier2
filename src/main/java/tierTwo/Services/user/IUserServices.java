@@ -5,7 +5,7 @@ import tierTwo.models.user.User;
 
 public interface IUserServices
 {
-  User validateUser(User user) throws Exception;
+  User validateUser(User user);
 
 
 }

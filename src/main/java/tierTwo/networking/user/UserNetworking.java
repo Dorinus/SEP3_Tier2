@@ -13,12 +13,9 @@ public class UserNetworking implements IUserNetworking
 {
   @Autowired SocketClient socketClient;
 
-  @Override public User validateUser(String username, String password)
+  @Override public User validateUser(User user)
   {
     Gson gson = new Gson();
-    User user = new User();
-    user.setUserName(username);
-    user.setPassword(password);
     String serializedAccount = gson.toJson(user);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.LOGIN, serializedAccount);
     String input = socketClient.communicate(networkRequest);

@@ -4,9 +4,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tierTwo.DAO.UserDAO;
 import tierTwo.Services.user.IUserServices;
 import tierTwo.models.user.User;
+import tierTwo.networking.user.UserNetworking;
 
 import java.io.IOException;
 import java.net.URI;
@@ -17,16 +17,16 @@ import java.net.http.HttpResponse;
 @Service
 public class UserService implements IUserServices
 {
-  @Autowired UserDAO userDAO;
+  @Autowired UserNetworking userNetworking;
 
-  public UserService(UserDAO userDAO)
+  public UserService(UserNetworking userNetworking)
   {
-    this.userDAO = userDAO;
+    this.userNetworking = userNetworking;
   }
 
-  @Override public User validateUser(User user) throws Exception
+  @Override public User validateUser(User user)
   {
-    User loginUser = userDAO.validateUser(user);
+    User loginUser = userNetworking.validateUser(user);
     if (loginUser != null)
     {
       return loginUser;
