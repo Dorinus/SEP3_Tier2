@@ -25,6 +25,10 @@ public class User
     return id;
   }
 
+  public void setId(int id)
+  {
+    this.id = id;
+  }
 
   public String getUsername()
   {
@@ -35,8 +39,6 @@ public class User
   {
     this.username = username;
   }
-
-
 
   public String getPassword()
   {
@@ -138,5 +140,13 @@ public class User
     this.postalIndex = postalIndex;
   }
 
-
+  @Override public String toString()
+  {
+    return "User{" + "id=" + id + ", username='" + username + '\''
+        + ", password='" + password + '\'' + ", type='" + type + '\''
+        + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\''
+        + ", dob='" + dob + '\'' + ", card='" + card + '\'' + ", cardDate='"
+        + cardDate + '\'' + ", email='" + email + '\'' + ", address='" + address
+        + '\'' + ", postalIndex='" + postalIndex + '\'' + '}';
+  }
 }

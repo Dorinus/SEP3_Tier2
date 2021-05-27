@@ -4,18 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class NetworkRequest
 {
-  @JsonProperty private NetworkType networkType;
+  @JsonProperty private NetworkType type;
   @JsonProperty private String content;
 
-  public NetworkRequest(NetworkType networkType, String content)
+  public NetworkRequest(NetworkType type, String content)
   {
-    this.networkType = networkType;
+    this.type = type;
     this.content = content;
   }
 
-  public NetworkType getNetworkType()
+  public NetworkType getType()
   {
-    return networkType;
+    return type;
   }
 
   public String getContent()
@@ -25,7 +25,7 @@ public class NetworkRequest
 
   @Override public String toString()
   {
-    return "NetworkRequest{" + "networkType=" + networkType + ", content='"
+    return "NetworkRequest{" + "networkType=" + type + ", content='"
         + content + '\'' + '}';
   }
 }

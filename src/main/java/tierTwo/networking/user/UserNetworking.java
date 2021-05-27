@@ -19,6 +19,7 @@ public class UserNetworking implements IUserNetworking
     String serializedAccount = gson.toJson(user);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.LOGIN, serializedAccount);
     String input = socketClient.communicate(networkRequest);
+    System.out.println("Input is " + input);
     return gson.fromJson(input, User.class);
   }
 

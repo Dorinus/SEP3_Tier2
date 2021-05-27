@@ -26,11 +26,6 @@ public class UserService implements IUserServices
 
   @Override public User validateUser(User user)
   {
-    User loginUser = userNetworking.validateUser(user);
-    if (loginUser != null)
-    {
-      return loginUser;
-    }
-    return null;
+    return userNetworking.validateUser(user);
   }
 }

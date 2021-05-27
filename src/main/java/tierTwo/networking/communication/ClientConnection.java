@@ -36,28 +36,30 @@ public class ClientConnection implements SocketClient
       byte[] requestBytes = request.getBytes();
       outputStream.write(requestBytes);
 
-      byte[] data = new byte[1024 * 1024];
+      byte[] data = new byte[2048];
       int count = inputStream.read(data);
-      String string = new String(data);
-      String updatedString = "";
+      String string = new String(data, 0, count);
+      System.out.println("Got string " + string);
+      return string;
+//      String updatedString = "";
 
-      for(int i=0; i<string.length(); i++)
-      {
-        if(string.charAt(i) == 0)
-        {
-          break;
-        }
-        updatedString += string.charAt(i);
-      }
-
-      if(updatedString.equals("\"confirmation from tier3\""))
-      {
-        return updatedString;
-      }
-      else
-      {
-        System.out.println("Client connection problem");
-      }
+//      for(int i=0; i<string.length(); i++)
+//      {
+//        if(string.charAt(i) == 0)
+//        {
+//          break;
+//        }
+//        updatedString += string.charAt(i);
+//      }
+//
+//      if(updatedString.equals("\"confirmation from tier3\""))
+//      {
+//        return updatedString;
+//      }
+//      else
+//      {
+//        System.out.println("Client connection problem");
+//      }
     }
     catch (Exception e)
     {

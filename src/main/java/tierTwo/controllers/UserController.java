@@ -2,18 +2,21 @@ package tierTwo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import tierTwo.Services.user.IUserServices;
 import tierTwo.Services.user.UserService;
 import tierTwo.models.user.User;
 
 @RestController
 public class UserController
 {
- @Autowired UserService userService;
+ @Autowired IUserServices userService;
 
-   @GetMapping("/login")
-  public User validateUser(User user){
-
+   @PostMapping("/login")
+  public User validateUser(@RequestBody User user){
+     System.out.println("Logging in user " + user);
      //call tier3 and get the response
    return userService.validateUser(user);
 
