@@ -11,8 +11,8 @@ public class CategoryService implements ICategoryService
 {
   @Autowired CategoryNetworking categoryNetworking;
 
-  @Override public List<Category> getCategories(String categoryName)
+  @Override public List<Category> getCategories()
   {
-    return categoryNetworking.getCategories(categoryName);
+    return categoryNetworking.getCategories();
   }
 }
