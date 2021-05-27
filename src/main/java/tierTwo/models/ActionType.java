@@ -13,4 +13,5 @@ public enum ActionType
   GETALLBIDDINGS,
   DELETEACCOUNT,
   DELETE_BIDDING,
+  GETUSERS,
 }

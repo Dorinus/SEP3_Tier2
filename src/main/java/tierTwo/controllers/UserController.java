@@ -22,8 +22,18 @@ public class UserController
 
    @GetMapping("/users/{pageNumber}")
   public List<User> getUsers(@PathVariable int pageNumber){
+
      System.out.println("Asking for page with user nr: " + pageNumber);
      return userService.getUsers(pageNumber);
+
+
+//     List<User> users = userService.getUsers(pageNumber);
+//     for (User u0 : users)
+//     {
+//       System.out.println(u0.getUsername());
+//     }
+//
+//     return users;
    }
 
 }
