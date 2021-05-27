@@ -13,6 +13,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 @Service
 public class UserService implements IUserServices
@@ -27,5 +28,10 @@ public class UserService implements IUserServices
   @Override public User validateUser(User user)
   {
     return userNetworking.validateUser(user);
+  }
+
+  @Override public List<User> getUsers(int pageNumber)
+  {
+     return userNetworking.geUsers(pageNumber);
   }
 }

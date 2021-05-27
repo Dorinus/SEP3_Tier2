@@ -11,11 +11,13 @@ public class Manager
 {
   private String username;
   private String password;
+  private String type;
 
   public Manager()
   {
     this.password = password;
     this.username = username;
+    this.type = type;
   }
 
   public String getUserName()
@@ -36,5 +38,14 @@ public class Manager
   public void setUsername(String username)
   {
     this.username = username;
+  }
+  public String getType()
+  {
+    return type;
+  }
+
+  public void setType(String type)
+  {
+    this.type = type;
   }
 }

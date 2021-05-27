@@ -2,6 +2,8 @@ package tierTwo.networking.user;
 
 import tierTwo.models.user.User;
 
+import java.util.List;
+
 public interface IUserNetworking
 {
   User validateUser(User user);
@@ -9,4 +11,5 @@ public interface IUserNetworking
   String editUser(User user);
   void deleteUser(int id);
   User getUserById(int id);
+  List<User> geUsers(int pageNumber);
 }

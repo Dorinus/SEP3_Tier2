@@ -23,7 +23,7 @@ public class UserController
    @GetMapping("/users/{pageNumber}")
   public List<User> getUsers(@PathVariable int pageNumber){
      System.out.println("Asking for page with user nr: " + pageNumber);
-     return null;
+     return userService.getUsers(pageNumber);
    }
 
 }
