@@ -27,12 +27,13 @@ public class ProductNetworking implements IProductNetworking
     socketClient.communicate(networkRequest);
   }
 
-  @Override public void editProduct(Product product)
+  @Override public String editProduct(Product product)
   {
     Gson gson = new Gson();
     String serializedBidding = gson.toJson(product);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITBIDDING, serializedBidding);
     socketClient.communicate(networkRequest);
+    return serializedBidding;
   }
 
   @Override public void deleteProduct(int id)

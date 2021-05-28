@@ -17,17 +17,17 @@ public class ProductService implements IProductService
     this.productNetworking = productNetworking;
   }
 
-  @Override public List<Product> addProduct(Product product)
+  @Override public void addProduct(Product product)
   {
-    return null;
+    productNetworking.addProduct(product);
   }
 
   @Override public String editProduct(Product product)
   {
-    return null;
+    return productNetworking.editProduct(product);
   }
 
-  @Override public void removeProduct(Product product)
+  @Override public  void removeProduct(Product product)
   {
 
   }
