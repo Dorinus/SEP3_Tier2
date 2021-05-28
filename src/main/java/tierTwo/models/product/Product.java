@@ -7,9 +7,9 @@ public class Product
   private int id;
   private String name;
   private String description;
-  private String price;
-  private Date date;
-  private transient byte[] photoUrl;
+  private double price;
+  private String date;
+  private String photoUrl;
 
   public Product()
   {
@@ -50,17 +50,17 @@ public class Product
     this.id = id;
   }
 
-  public String getPrice()
+  public double getPrice()
   {
     return price;
   }
 
-  public void setPrice(String price)
+  public void setPrice(double price)
   {
     this.price = price;
   }
 
-  public Date getDate()
+  public String getDate()
   {
     return date;
   }
@@ -70,7 +70,7 @@ public class Product
     this.date = date;
   }
 
-  public void setAvatar(byte[] photoUrl)
+  public void setPhotoUrl (String photoUrl)
   {
     this.photoUrl = photoUrl;
   }

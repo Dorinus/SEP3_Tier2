@@ -31,4 +31,9 @@ public class ProductService implements IProductService
   {
     productNetworking.deleteProduct(id);
   }
+
+  @Override public List<Product> getProduct(int id)
+  {
+    return productNetworking.getProduct(id);
+  }
 }

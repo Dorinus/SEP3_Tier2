@@ -16,4 +16,5 @@ public enum NetworkType
   GETBIDDINGS,
   DELETEBIDDING,
   GETCATEGORIES,
+  GETPRODUCT,
 }
