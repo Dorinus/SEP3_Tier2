@@ -8,5 +8,5 @@ public interface IProductService
 {
   void addProduct(Product product);
   String editProduct(Product product);
-  void removeProduct(Product product);
+  void deleteProduct(int id);
 }
