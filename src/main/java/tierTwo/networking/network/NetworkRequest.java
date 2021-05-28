@@ -13,6 +13,11 @@ public class NetworkRequest
     this.content = content;
   }
 
+  public NetworkRequest(NetworkType type)
+  {
+    this.type = type;
+  }
+
   public NetworkType getType()
   {
     return type;

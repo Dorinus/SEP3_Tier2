@@ -20,8 +20,8 @@ public class CategoryNetworking implements ICategoryNetworking
   @Override public List<Category> getCategories()
   {
     Gson gson = new Gson();
-    NetworkRequest networkRequest= new NetworkRequest(NetworkType.GETCATEGORIES, String.valueOf(""));
+    NetworkRequest networkRequest= new NetworkRequest(NetworkType.GETCATEGORIES);
     String input = socketClient.communicate(networkRequest);
-    return gson.fromJson(input, new TypeToken<List<User>>(){}.getType());
+    return gson.fromJson(input, new TypeToken<List<Category>>(){}.getType());
   }
 }
