@@ -18,6 +18,7 @@ public class AdministratorSocket implements IAdministratorSocket
 {
 
   @Autowired SocketClient socketClient;
+  /*
 
   @Override public Administrator validateAdministrator(String username,
       String password)
@@ -68,11 +69,5 @@ public class AdministratorSocket implements IAdministratorSocket
     return socketClient.communicate(networkRequest);
   }
 
-  @Override public void addBidding(Product product)
-  {
-    Gson gson = new Gson();
-    String serializedBidding = gson.toJson(product);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDBIDDING, serializedBidding);
-    socketClient.communicate(networkRequest);
-  }
+  */
 }

@@ -11,12 +11,12 @@ import tierTwo.networking.network.NetworkRequest;
 import tierTwo.networking.network.NetworkType;
 
 import java.util.List;
-
+/*
 @Component
 public class ManagerNetworking implements IManagerNetworking
 {
-  @Autowired SocketClient socketClient;
 
+  @Autowired SocketClient socketClient;
   @Override public List<Manager> getAllUsers(int id)
   {
     Gson gson = new Gson();
@@ -55,3 +55,4 @@ public class ManagerNetworking implements IManagerNetworking
     return gson.fromJson(input, Manager.class);
   }
 }
+ */

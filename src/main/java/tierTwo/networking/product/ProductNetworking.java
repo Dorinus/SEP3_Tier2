@@ -3,6 +3,7 @@ package tierTwo.networking.product;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tierTwo.models.product.Product;
 import tierTwo.models.user.User;
 import tierTwo.networking.communication.SocketClient;
@@ -11,6 +12,7 @@ import tierTwo.networking.network.NetworkType;
 
 import java.util.List;
 
+@Component
 public class ProductNetworking implements IProductNetworking
 {
   @Autowired SocketClient socketClient;
@@ -23,8 +25,8 @@ public class ProductNetworking implements IProductNetworking
   @Override public int addProduct(Product product)
   {
     Gson gson = new Gson();
-    String serializedBidding = gson.toJson(product);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDPRODUCT, serializedBidding);
+    String serializedProduct = gson.toJson(product);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDPRODUCT, serializedProduct);
     String input = socketClient.communicate(networkRequest);
     System.out.println("Input is " + input);
     return gson.fromJson(input, int.class);

@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface IManagerNetworking
 {
-  List<Manager> getAllUsers(int id);
+ /* List<Manager> getAllUsers(int id);
   List<Product> getAllBiddings(int id);
   String editBidding(Product product);
-  Manager validateManager(String username, String password);
+  Manager validateManager(String username, String password); */
 }
