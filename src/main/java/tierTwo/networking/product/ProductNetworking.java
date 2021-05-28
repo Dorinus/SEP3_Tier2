@@ -24,7 +24,7 @@ public class ProductNetworking implements IProductNetworking
   {
     Gson gson = new Gson();
     String serializedBidding = gson.toJson(product);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDBIDDING, serializedBidding);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDPRODUCT, serializedBidding);
     String input = socketClient.communicate(networkRequest);
     System.out.println("Input is " + input);
     return gson.fromJson(input, int.class);
