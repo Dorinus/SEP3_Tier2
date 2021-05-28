@@ -5,7 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tierTwo.models.administrator.Administrator;
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 import tierTwo.models.user.User;
 import tierTwo.networking.communication.SocketClient;
 import tierTwo.networking.network.NetworkRequest;
@@ -40,12 +40,12 @@ public class AdministratorSocket implements IAdministratorSocket
     return gson.fromJson(input, new TypeToken<List<User>>(){}.getType());
   }
 
-  @Override public List<Bidding> getAllBiddings()
+  @Override public List<Product> getAllBiddings()
   {
     Gson gson = new Gson();
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETBIDDINGS, null);
     String input = socketClient.communicate(networkRequest);
-    return gson.fromJson(input, new TypeToken<List<Bidding>>() {}.getType());
+    return gson.fromJson(input, new TypeToken<List<Product>>() {}.getType());
   }
 
   @Override public void deleteAccount(int id)
@@ -60,18 +60,18 @@ public class AdministratorSocket implements IAdministratorSocket
     socketClient.communicate(networkRequest);
   }
 
-  @Override public String editBidding(Bidding bidding)
+  @Override public String editBidding(Product product)
   {
     Gson gson = new Gson();
-    String serializedBidding = gson.toJson(bidding);
+    String serializedBidding = gson.toJson(product);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITBIDDING, serializedBidding);
     return socketClient.communicate(networkRequest);
   }
 
-  @Override public void addBidding(Bidding bidding)
+  @Override public void addBidding(Product product)
   {
     Gson gson = new Gson();
-    String serializedBidding = gson.toJson(bidding);
+    String serializedBidding = gson.toJson(product);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDBIDDING, serializedBidding);
     socketClient.communicate(networkRequest);
   }

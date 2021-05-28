@@ -1,15 +1,14 @@
 package tierTwo.networking.manager;
 
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 import tierTwo.models.manager.Manager;
-import tierTwo.models.user.User;
 
 import java.util.List;
 
 public interface IManagerNetworking
 {
   List<Manager> getAllUsers(int id);
-  List<Bidding> getAllBiddings(int id);
-  String editBidding(Bidding bidding);
+  List<Product> getAllBiddings(int id);
+  String editBidding(Product product);
   Manager validateManager(String username, String password);
 }

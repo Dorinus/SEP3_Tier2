@@ -1,10 +1,10 @@
 package tierTwo.Services.manager;
 
 import org.springframework.stereotype.Service;
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 
 @Service
 public interface IManagerService
 {
-  String editBidding(Bidding bidding);
+  String editBidding(Product product);
 }

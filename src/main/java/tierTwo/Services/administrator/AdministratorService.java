@@ -1,7 +1,7 @@
 package tierTwo.Services.administrator;
 
 import org.springframework.stereotype.Service;
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 import tierTwo.models.user.User;
 
 import java.util.List;
@@ -20,27 +20,12 @@ public class AdministratorService implements IAdministratorService
     return null;
   }
 
-  @Override public List<Bidding> addBidding(Bidding bidding)
+  @Override public List<Product> showBiddings(Product product)
   {
     return null;
   }
 
-  @Override public String editBidding(Bidding bidding)
-  {
-    return null;
-  }
-
-  @Override public void removeBidding(Bidding bidding)
-  {
-
-  }
-
-  @Override public List<Bidding> showBiddings(Bidding bidding)
-  {
-    return null;
-  }
-
-  @Override public String searchBiddings(Bidding bidding)
+  @Override public String searchBiddings(Product product)
   {
     return null;
   }

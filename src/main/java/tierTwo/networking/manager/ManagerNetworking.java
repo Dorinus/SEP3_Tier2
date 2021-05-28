@@ -4,9 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 import tierTwo.models.manager.Manager;
-import tierTwo.models.user.User;
 import tierTwo.networking.communication.SocketClient;
 import tierTwo.networking.network.NetworkRequest;
 import tierTwo.networking.network.NetworkType;
@@ -27,19 +26,19 @@ public class ManagerNetworking implements IManagerNetworking
     return gson.fromJson(input, new TypeToken<List<Manager>>(){}.getType());
   }
 
-  @Override public List<Bidding> getAllBiddings(int id)
+  @Override public List<Product> getAllBiddings(int id)
   {
     Gson gson = new Gson();
-    Bidding bidding = new Bidding();
+    Product product = new Product();
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETALLBIDDINGSBYID, String.valueOf(id));
     String input = socketClient.communicate(networkRequest);
-    return gson.fromJson(input, new TypeToken<List<Bidding>>(){}.getType());
+    return gson.fromJson(input, new TypeToken<List<Product>>(){}.getType());
   }
 
-  @Override public String editBidding(Bidding bidding)
+  @Override public String editBidding(Product product)
   {
     Gson gson = new Gson();
-    String serializedBidding = gson.toJson(bidding);
+    String serializedBidding = gson.toJson(product);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITBIDDING, serializedBidding);
     return socketClient.communicate(networkRequest);
   }

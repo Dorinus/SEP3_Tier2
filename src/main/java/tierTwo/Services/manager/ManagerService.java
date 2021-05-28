@@ -1,10 +1,10 @@
 package tierTwo.Services.manager;
 
-import tierTwo.models.bidding.Bidding;
+import tierTwo.models.product.Product;
 
 public class ManagerService implements IManagerService
 {
-  @Override public String editBidding(Bidding bidding)
+  @Override public String editBidding(Product product)
   {
     return null;
   }

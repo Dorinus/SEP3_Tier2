@@ -1,20 +1,20 @@
-package tierTwo.models.bidding;
+package tierTwo.models.product;
 
 import java.util.Date;
 
-public class Bidding
+public class Product
 {
+  private int id;
   private String name;
   private String description;
   private String price;
-  private int id;
   private Date date;
-  private transient byte[] image;
+  private transient byte[] photoUrl;
 
-  public Bidding()
+  public Product()
   {
-    this.date = date;
     this.id = id;
+    this.date = date;
     this.description = description;
     this.name = name;
     this.price = price;
@@ -70,8 +70,8 @@ public class Bidding
     this.date = date;
   }
 
-  public void setAvatar(byte[] image)
+  public void setAvatar(byte[] photoUrl)
   {
-    this.image = image;
+    this.photoUrl = photoUrl;
   }
 }
