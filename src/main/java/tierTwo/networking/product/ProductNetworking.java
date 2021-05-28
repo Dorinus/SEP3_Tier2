@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import tierTwo.models.product.Product;
+import tierTwo.models.user.User;
 import tierTwo.networking.communication.SocketClient;
 import tierTwo.networking.network.NetworkRequest;
 import tierTwo.networking.network.NetworkType;
@@ -19,12 +20,14 @@ public class ProductNetworking implements IProductNetworking
     this.socketClient = socketClient;
   }
 
-  @Override public void addProduct(Product product)
+  @Override public int addProduct(Product product)
   {
     Gson gson = new Gson();
     String serializedBidding = gson.toJson(product);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.ADDBIDDING, serializedBidding);
-    socketClient.communicate(networkRequest);
+    String input = socketClient.communicate(networkRequest);
+    System.out.println("Input is " + input);
+    return gson.fromJson(input, int.class);
   }
 
   @Override public String editProduct(Product product)

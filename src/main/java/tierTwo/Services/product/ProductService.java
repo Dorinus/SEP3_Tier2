@@ -17,9 +17,9 @@ public class ProductService implements IProductService
     this.productNetworking = productNetworking;
   }
 
-  @Override public void addProduct(Product product)
+  @Override public int addProduct(Product product)
   {
-    productNetworking.addProduct(product);
+    return productNetworking.addProduct(product);
   }
 
   @Override public String editProduct(Product product)
