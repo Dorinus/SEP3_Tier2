@@ -12,11 +12,11 @@ import java.util.List;
 
 public class ProductNetworking implements IProductNetworking
 {
-  @Autowired ProductNetworking productNetworking;
+  @Autowired SocketClient socketClient;
 
-  public ProductNetworking(ProductNetworking productNetworking)
+  public ProductNetworking(SocketClient socketClient)
   {
-    this.productNetworking = productNetworking;
+    this.socketClient = socketClient;
   }
 
   @Override public void addProduct(Product product)

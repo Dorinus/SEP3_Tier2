@@ -12,6 +12,11 @@ public class ProductService implements IProductService
 {
   @Autowired ProductNetworking productNetworking;
 
+  public ProductService(ProductNetworking productNetworking)
+  {
+    this.productNetworking = productNetworking;
+  }
+
   @Override public List<Product> addProduct(Product product)
   {
     return null;
