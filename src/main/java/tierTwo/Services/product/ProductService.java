@@ -27,9 +27,9 @@ public class ProductService implements IProductService
     return productNetworking.editProduct(product);
   }
 
-  @Override public  void deleteProduct(int id)
+  @Override public  void removeProduct(int id)
   {
-    productNetworking.deleteProduct(id);
+    productNetworking.removeProduct(id);
   }
 
   @Override public List<Product> getProduct(int id)

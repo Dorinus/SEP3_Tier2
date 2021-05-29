@@ -8,6 +8,6 @@ public interface IProductNetworking
 {
   int addProduct(Product product);
   String editProduct(Product product);
-  void deleteProduct(int id);
+  void removeProduct(int id);
   List<Product> getProduct(int id);
 }
