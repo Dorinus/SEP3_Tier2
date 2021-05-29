@@ -3,7 +3,6 @@ package tierTwo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tierTwo.Services.user.IUserServices;
-import tierTwo.Services.user.UserService;
 import tierTwo.models.user.User;
 
 import java.util.List;
@@ -17,7 +16,23 @@ public class UserController
   public User validateUser(@RequestBody User user){
      System.out.println("Logging in user " + user);
      //call tier3 and get the response
-   return userService.validateUser(user);
+     User user1 = userService.validateUser(user);
+     if(user1==null){
+       System.out.println("user is null");
+     }
+   return user1;
+
+   }
+
+   //test
+  @GetMapping("/user")
+  public User getUser(){
+
+    User user = new User();
+    user.setUsername("admin1");
+    user.setPassword("admin1");
+    user.setType("admin");
+    return user;
    }
 
    @GetMapping("/users/{pageNumber}")
@@ -34,6 +49,6 @@ public class UserController
 //     }
 //
 //     return users;
-   }
+  }
 
 }
