@@ -47,7 +47,7 @@ public class ProductNetworking implements IProductNetworking
     return true;
   }
 
-  @Override public Product getProduct(int id)
+  @Override public List<Product> getProduct(int id)
   {
     Gson gson = new Gson();
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETPRODUCT, String.valueOf(id));
