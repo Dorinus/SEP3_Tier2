@@ -32,7 +32,7 @@ public class ProductService implements IProductService
     return productNetworking.removeProduct(id);
   }
 
-  @Override public List<Product> getProduct(int id)
+  @Override public Product getProduct(int id)
   {
     return productNetworking.getProduct(id);
   }
