@@ -25,7 +25,7 @@ public class ProductController
     System.out.println("Asking to get all active products");
 
     // Todo call tier 3 and return all active products
-    return null;
+    return productService.getActiveProducts(pageNumber);
   }
 
   @GetMapping("/product/{productId}")
