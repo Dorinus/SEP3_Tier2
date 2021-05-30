@@ -8,7 +8,7 @@ import java.util.List;
 @RestController public class BidController
 {
   @PostMapping("/bid/{productId}")
-  public boolean bid(@PathVariable String productId , @RequestBody int newPrice)
+  public boolean bid(@PathVariable int productId , @RequestBody int newPrice)
   {
     System.out.println("Setting new price for product: " + productId + " " + newPrice);
 
