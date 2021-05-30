@@ -22,18 +22,16 @@ public class ProductController
 
   @GetMapping("/activeProducts/{pageNumber}")
   public List<Product> getActiveProducts(@PathVariable int pageNumber){
-    System.out.println("Asking t o get all active products");
+    System.out.println("Asking to get all active products");
 
     // Todo call tier 3 and return all active products
-    return productService.getActiveProducts(pageNumber);
+    return null;
   }
 
   @GetMapping("/product/{productId}")
   public Product getProduct(@PathVariable int productId){
     System.out.println("Asking to get all active products");
-
-    // Todo call tier 3 and return product with this id
-    return (Product) productService.getProduct(productId);
+    return productService.getProduct(productId);
   }
 
 

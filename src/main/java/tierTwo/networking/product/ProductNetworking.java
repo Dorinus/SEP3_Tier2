@@ -47,12 +47,12 @@ public class ProductNetworking implements IProductNetworking
     return true;
   }
 
-  @Override public List<Product> getProduct(int id)
+  @Override public Product getProduct(int id)
   {
     Gson gson = new Gson();
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETPRODUCT, String.valueOf(id));
     String input = socketClient.communicate(networkRequest);
-    return gson.fromJson(input, new TypeToken<List<Product>>(){}.getType());
+    return gson.fromJson(input, new TypeToken<Product>(){}.getType());
   }
 
   @Override public List<Product> getActiveProducts(int pageNumber)
