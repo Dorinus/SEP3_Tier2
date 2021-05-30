@@ -13,29 +13,47 @@ public class ProductController
 
   @Autowired IProductService productService;
 
-  @PostMapping("/product") public int addProduct(@RequestBody Product product)
-  {
+  @PostMapping("/product")
+  public int createProduct(@RequestBody Product product){
     System.out.println("Creating product " + product.getName());
     //call tier3 and get the response
     return productService.addProduct(product);
   }
 
-  @GetMapping("/product/{id}") public List<Product> getUsers(@PathVariable int id)
-  {
+  @GetMapping("/activeProducts/{pageNumber}")
+  public List<Product> getActiveProducts(@PathVariable int pageNumber){
+    System.out.println("Asking t o get all active products");
 
-    System.out.println("Asking for product: " + id);
-    return productService.getProduct(id);
+    // Todo call tier 3 and return all active products
+    return null;
   }
 
-  @GetMapping("/edit") public String editProduct(@RequestBody Product product)
-  {
-    return productService.editProduct(product);
+  @GetMapping("/product/{productId}")
+  public Product getProduct(@PathVariable int productId){
+    System.out.println("Asking to get all active products");
+
+    // Todo call tier 3 and return product with this id
+    return null;
   }
 
-  @DeleteMapping("/delete/{id}") public void removeProduct(@PathVariable int id)
-  {
-    productService.removeProduct(id);
+
+  @DeleteMapping("/product/{productId}")
+  public boolean removeProduct(@PathVariable int productId){
+    System.out.println("Asking to get a bool for delete confirmation");
+
+
+    // Todo call tier 3 and return true if product is deleted
+    return true;
   }
+
+  @PutMapping("/product/{productId}")
+  public boolean editProduct(@RequestBody Product product){
+    System.out.println("Asking to get a bool for edit confirmation");
+
+
+    // Todo call tier 3 and return true if product is edited
+    return true;
+  }
+
+
 }
-
-
