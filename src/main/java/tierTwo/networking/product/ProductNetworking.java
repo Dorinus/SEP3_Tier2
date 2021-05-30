@@ -5,7 +5,6 @@ import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tierTwo.models.product.Product;
-import tierTwo.models.user.User;
 import tierTwo.networking.communication.SocketClient;
 import tierTwo.networking.network.NetworkRequest;
 import tierTwo.networking.network.NetworkType;
@@ -48,7 +47,7 @@ public class ProductNetworking implements IProductNetworking
     return true;
   }
 
-  @Override public List<Product> getProduct(int id)
+  @Override public Product getProduct(int id)
   {
     Gson gson = new Gson();
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETPRODUCT, String.valueOf(id));

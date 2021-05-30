@@ -10,5 +10,4 @@ public interface IProductService
   boolean editProduct(Product editedProduct);
   boolean removeProduct(int id);
   List<Product> getProduct(int id);
-  List<Product> getActiveProducts(int pageNumber);
 }
