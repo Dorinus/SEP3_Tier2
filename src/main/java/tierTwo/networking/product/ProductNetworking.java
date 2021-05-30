@@ -32,19 +32,20 @@ public class ProductNetworking implements IProductNetworking
     return gson.fromJson(input, int.class);
   }
 
-  @Override public String editProduct(Product product)
+  @Override public boolean editProduct(int id)
   {
     Gson gson = new Gson();
-    String serializedBidding = gson.toJson(product);
+    String serializedBidding = gson.toJson(id);
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITPRODUCT, serializedBidding);
     socketClient.communicate(networkRequest);
-    return serializedBidding;
+    return true;
   }
 
-  @Override public void removeProduct(int id)
+  @Override public boolean removeProduct(int id)
   {
     NetworkRequest networkRequest = new NetworkRequest(NetworkType.REMOVEPRODUCT, String.valueOf(id));
     socketClient.communicate(networkRequest);
+    return true;
   }
 
   @Override public List<Product> getProduct(int id)

@@ -7,7 +7,7 @@ import java.util.List;
 public interface IProductNetworking
 {
   int addProduct(Product product);
-  String editProduct(Product product);
-  void removeProduct(int id);
+  boolean editProduct(int id);
+  boolean removeProduct(int id);
   List<Product> getProduct(int id);
 }

@@ -47,7 +47,7 @@ public class ProductController
   }
 
   @PutMapping("/product/{productId}")
-  public boolean editProduct(@RequestBody Product product){
+  public boolean editProduct(@RequestBody int id){
     System.out.println("Asking to get a bool for edit confirmation");
 
 
