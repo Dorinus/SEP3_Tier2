@@ -36,4 +36,9 @@ public class ProductService implements IProductService
   {
     return productNetworking.getProduct(id);
   }
+
+  @Override public List<Product> getActiveProducts(int pageNumber)
+  {
+    return productNetworking.getActiveProducts(pageNumber);
+  }
 }
