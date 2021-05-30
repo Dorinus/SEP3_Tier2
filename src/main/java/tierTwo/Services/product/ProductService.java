@@ -22,15 +22,14 @@ public class ProductService implements IProductService
     return productNetworking.addProduct(product);
   }
 
-  @Override public boolean editProduct(int id)
+  @Override public boolean editProduct(Product editedProduct)
   {
-    return true;
+    return productNetworking.editProduct(editedProduct);
   }
 
   @Override public  boolean removeProduct(int id)
   {
-    productNetworking.removeProduct(id);
-    return true;
+    return productNetworking.removeProduct(id);
   }
 
   @Override public List<Product> getProduct(int id)

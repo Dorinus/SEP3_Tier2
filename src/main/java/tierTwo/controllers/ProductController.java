@@ -40,19 +40,14 @@ public class ProductController
   @DeleteMapping("/product/{productId}")
   public boolean removeProduct(@PathVariable int productId){
     System.out.println("Asking to get a bool for delete confirmation");
-
-
-    // Todo call tier 3 and return true if product is deleted
-    return true;
+    return productService.removeProduct(productId);
   }
 
   @PutMapping("/product/{productId}")
-  public boolean editProduct(@RequestBody int id){
+  public boolean editProduct(@RequestBody Product editedProduct){
     System.out.println("Asking to get a bool for edit confirmation");
 
-
-    // Todo call tier 3 and return true if product is edited
-    return true;
+    return productService.editProduct(editedProduct);
   }
 
 
