@@ -12,9 +12,9 @@ import java.util.List;
 public class BidService implements IBidService
 {
   @Autowired BidNetworking bidNetworking;
-  @Override public boolean bid(int id, int newPrice)
+  @Override public boolean bid(int productId, int userId, int newPrice)
   {
-    return bidNetworking.bid(id, newPrice);
+    return bidNetworking.bid(productId, userId, newPrice);
   }
 
   @Override public String getBidWinner(int productId)

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IBidService
 {
-  boolean bid(int id, int newPrice);
+  boolean bid(int productId, int userId, int newPrice);
   String getBidWinner(int productId);
   List<Product> getUserBids(int userId);
 }

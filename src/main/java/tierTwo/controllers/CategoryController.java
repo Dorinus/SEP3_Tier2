@@ -22,15 +22,15 @@ public class CategoryController
     return categoryService.getCategories();
   }
 
-  @PostMapping("/category/{categoryName}")
-  public boolean createCategory(@PathVariable String categoryName){
-    System.out.println("Adding new category " + categoryName);
-    return categoryService.createCategory( new Category(categoryName));
+  @PostMapping("/category")
+  public boolean createCategory(@RequestBody Category category){
+    System.out.println("Adding new category " + category);
+    return categoryService.createCategory(category);
   }
 
   @DeleteMapping("/category/{categoryName}")
   public boolean removeCategory(@PathVariable String categoryName){
-    System.out.println("Deletene category " + categoryName);
+    System.out.println("Delete category " + categoryName);
     return categoryService.removeCategory(categoryName);
   }
 }

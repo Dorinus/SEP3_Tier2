@@ -11,27 +11,22 @@ import java.util.List;
 {
   @Autowired IBidService bidService;
 
-  @PostMapping("/bid/{productId}")
-  public boolean bid(@PathVariable int productId , @RequestBody int newPrice)
+  @PostMapping("/bid/{productId}/{userId}")
+  public boolean bid(@PathVariable int productId, @PathVariable int userId, @RequestBody int newPrice)
   {
-    System.out.println("Setting new price for product: " + productId + " " + newPrice);
-    return bidService.bid(productId, newPrice);
+    System.out.println("Setting new price for product: " + productId + "by user " + userId + " " + newPrice);
+    return bidService.bid(productId, userId, newPrice);
   }
 
-  @GetMapping("/product/winner/{productId}")
+  @GetMapping("/bid/winner/{productId}")
   public String getBidWinner(@PathVariable int productId){
     System.out.println("Asking to get all active products");
     return bidService.getBidWinner(productId);
   }
 
-  @GetMapping("/product/{userId}")
+  @GetMapping("/bid/{userId}")
   public List<Product> getUserBids(@PathVariable int userId){
     System.out.println("Asking to get all products user bids on or won the bid");
     return bidService.getUserBids(userId);
   }
-
-
-
-
-
 }

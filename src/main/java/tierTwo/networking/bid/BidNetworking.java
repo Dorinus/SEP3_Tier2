@@ -6,6 +6,7 @@ import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import tierTwo.models.ProductBid;
 import tierTwo.models.product.Product;
 import tierTwo.networking.communication.SocketClient;
 import tierTwo.networking.network.NetworkRequest;
@@ -17,14 +18,16 @@ import java.util.List;
 public class BidNetworking implements IBidNetworking
 {
   @Autowired SocketClient socketClient;
-  @Override public boolean bid(int id, int newPrice)
+  @Override public boolean bid(int productId, int userId, int newPrice)
   {
     Gson gson = new Gson();
-    String serializedbidId = gson.toJson(id);
-    String serializedBidNewPrice = gson.toJson(newPrice);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.BID, serializedbidId);
-    NetworkRequest networkRequest1 = new NetworkRequest(NetworkType.BID, serializedBidNewPrice);
-    return socketClient.communicate(networkRequest, networkRequest1);
+    ProductBid productBid = new ProductBid(productId, userId, newPrice);
+    String serializedBid = gson.toJson(productBid);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.BID, serializedBid);
+
+    String resp = socketClient.communicate(networkRequest);
+    System.out.println("Got bid response " + resp);
+    return true;
   }
 
   @Override public String getBidWinner(int productId)
