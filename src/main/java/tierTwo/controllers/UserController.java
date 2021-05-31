@@ -44,4 +44,10 @@ public class UserController
     return userService.editUser(editedUser);
   }
 
+  @PutMapping("/users/type")
+  public boolean changeUserType(@RequestBody int userId){
+    System.out.println("Asking to get a bool for edit confirmation");
+    return userService.editUserType(userId);
+  }
+
 }
