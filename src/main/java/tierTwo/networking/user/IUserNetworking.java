@@ -8,8 +8,8 @@ public interface IUserNetworking
 {
   User validateUser(User user);
   String register(User user);
-  String editUser(User user);
-  void deleteUser(int id);
+  boolean editUser(User user);
+  boolean removeUser(int id);
   User getUserById(int id);
   List<User> geUsers(int pageNumber);
 }

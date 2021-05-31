@@ -16,15 +16,12 @@ public class ProductController
   @PostMapping("/product")
   public int createProduct(@RequestBody Product product){
     System.out.println("Creating product " + product.getName());
-    //call tier3 and get the response
     return productService.addProduct(product);
   }
 
   @GetMapping("/activeProducts/{pageNumber}")
   public List<Product> getActiveProducts(@PathVariable int pageNumber){
     System.out.println("Asking to get all active products");
-
-    // Todo call tier 3 and return all active products
     return productService.getActiveProducts(pageNumber);
   }
 
@@ -44,7 +41,6 @@ public class ProductController
   @PutMapping("/product/{productId}")
   public boolean editProduct(@RequestBody Product editedProduct){
     System.out.println("Asking to get a bool for edit confirmation");
-
     return productService.editProduct(editedProduct);
   }
 

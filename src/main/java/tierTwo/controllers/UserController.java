@@ -40,15 +40,18 @@ public class UserController
 
      System.out.println("Asking for page with user nr: " + pageNumber);
      return userService.getUsers(pageNumber);
+  }
 
+  @DeleteMapping("/users/{userId}")
+  public boolean removeUser(@PathVariable int userId){
+    System.out.println("Asking to get a bool for delete confirmation");
+    return userService.removeUser(userId);
+  }
 
-//     List<User> users = userService.getUsers(pageNumber);
-//     for (User u0 : users)
-//     {
-//       System.out.println(u0.getUsername());
-//     }
-//
-//     return users;
+  @PutMapping("/users/{userId}")
+  public boolean editUser(@RequestBody User editedUser){
+    System.out.println("Asking to get a bool for edit confirmation");
+    return userService.editUser(editedUser);
   }
 
 }

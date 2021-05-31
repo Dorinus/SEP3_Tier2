@@ -34,19 +34,20 @@ public class UserNetworking implements IUserNetworking
     return socketClient.communicate(networkRequest);
   }
 
-  @Override public String editUser(User user)
+  @Override public boolean editUser(User user)
   {
     Gson gson = new Gson();
     String serializedAccount = gson.toJson(user);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITACCOUNT, serializedAccount);
-    return socketClient.communicate(networkRequest);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.EDITUSER, serializedAccount);
+    return true;
   }
 
-  @Override public void deleteUser(int id)
+  @Override public boolean removeUser(int id)
   {
     Gson gson = new Gson();
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.DELETEACCOUNT, String.valueOf(id));
-    socketClient.communicate(networkRequest);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.REMOVEUSER, String.valueOf(id));
+    //socketClient.communicate(networkRequest);
+    return true;
   }
 
   @Override public User getUserById(int id)

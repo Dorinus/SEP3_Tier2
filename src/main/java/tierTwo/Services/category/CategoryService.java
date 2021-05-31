@@ -17,4 +17,14 @@ public class CategoryService implements ICategoryService
   {
     return categoryNetworking.getCategories();
   }
+
+  @Override public boolean createCategory(Category category)
+  {
+    return categoryNetworking.createCategory(category);
+  }
+
+  @Override public boolean removeCategory(String categoryName)
+  {
+    return categoryNetworking.removeCategory(categoryName);
+  }
 }

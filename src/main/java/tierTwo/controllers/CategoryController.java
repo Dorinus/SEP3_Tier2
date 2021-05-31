@@ -23,17 +23,14 @@ public class CategoryController
   }
 
   @PostMapping("/category/{categoryName}")
-  public boolean CreateCategory(@PathVariable String categoryName){
+  public boolean createCategory(@PathVariable String categoryName){
     System.out.println("Adding new category " + categoryName);
-
-    //ToDo add category and get responsse
-    return true;
+    return categoryService.createCategory( new Category(categoryName));
   }
 
   @DeleteMapping("/category/{categoryName}")
-  public boolean removeProduct(@PathVariable String categoryName){
+  public boolean removeCategory(@PathVariable String categoryName){
     System.out.println("Deletene category " + categoryName);
-    //ToDo delete category and get responsse
-    return true;
+    return categoryService.removeCategory(categoryName);
   }
 }

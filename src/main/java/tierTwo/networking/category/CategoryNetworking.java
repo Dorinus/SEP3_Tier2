@@ -24,4 +24,21 @@ public class CategoryNetworking implements ICategoryNetworking
     String input = socketClient.communicate(networkRequest);
     return gson.fromJson(input, new TypeToken<List<Category>>(){}.getType());
   }
+
+  @Override public boolean createCategory(Category category)
+  {
+    Gson gson = new Gson();
+    String serializedProduct = gson.toJson(category);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.CREATECATEGORY, serializedProduct);
+    String input = socketClient.communicate(networkRequest);
+    System.out.println("Input is " + input);
+    return gson.fromJson(input, boolean.class);
+  }
+
+  @Override public boolean removeCategory(String categoryName)
+  {
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.REMOVECATEGORY, String.valueOf(categoryName));
+    socketClient.communicate(networkRequest);
+    return true;
+  }
 }

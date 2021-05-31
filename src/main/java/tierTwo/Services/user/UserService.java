@@ -1,18 +1,10 @@
 package tierTwo.Services.user;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tierTwo.Services.user.IUserServices;
 import tierTwo.models.user.User;
 import tierTwo.networking.user.UserNetworking;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Service
@@ -33,5 +25,26 @@ public class UserService implements IUserServices
   @Override public List<User> getUsers(int pageNumber)
   {
      return userNetworking.geUsers(pageNumber);
+  }
+
+  @Override public String register(User user)
+  {
+    return userNetworking.register(user);
+  }
+
+  @Override public boolean editUser(User user)
+  {
+    return userNetworking.editUser(user);
+  }
+
+  @Override public boolean removeUser(int id)
+  {
+   userNetworking.removeUser(id);
+    return false;
+  }
+
+  @Override public User getUserById(int id)
+  {
+    return userNetworking.getUserById(id);
   }
 }
