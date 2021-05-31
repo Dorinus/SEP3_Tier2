@@ -24,16 +24,6 @@ public class UserController
 
    }
 
-   //test
-  @GetMapping("/user")
-  public User getUser(){
-
-    User user = new User();
-    user.setUsername("admin1");
-    user.setPassword("admin1");
-    user.setType("admin");
-    return user;
-   }
 
    @GetMapping("/users/{pageNumber}")
   public List<User> getUsers(@PathVariable int pageNumber){
