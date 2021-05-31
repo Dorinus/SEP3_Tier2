@@ -42,6 +42,14 @@ public class UserNetworking implements IUserNetworking
     return true;
   }
 
+  @Override public String changeType(int userId)
+  {
+    Gson gson = new Gson();
+    String serializedUser = gson.toJson(userId);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.CHANGETYPE, serializedUser);
+    return socketClient.communicate(networkRequest);
+  }
+
   @Override public boolean removeUser(int id)
   {
     Gson gson = new Gson();

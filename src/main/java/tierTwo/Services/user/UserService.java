@@ -37,6 +37,11 @@ public class UserService implements IUserServices
     return userNetworking.editUser(user);
   }
 
+  @Override public String changeType(int userId)
+  {
+    return userNetworking.changeType(userId);
+  }
+
   @Override public boolean removeUser(int id)
   {
    userNetworking.removeUser(id);

@@ -10,6 +10,7 @@ public interface IUserServices
   List<User> getUsers(int pageNumber);
   String register(User user);
   boolean editUser(User user);
+  String changeType(int userId);
   boolean removeUser(int id);
   User getUserById(int id);
 }
