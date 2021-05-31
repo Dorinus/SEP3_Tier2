@@ -19,14 +19,19 @@ public class BidNetworking implements IBidNetworking
   @Autowired SocketClient socketClient;
   @Override public boolean bid(int id, int newPrice)
   {
-    return true;
+    Gson gson = new Gson();
+    String serializedbidId = gson.toJson(id);
+    String serializedBidNewPrice = gson.toJson(newPrice);
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.BID, serializedbidId);
+    NetworkRequest networkRequest1 = new NetworkRequest(NetworkType.BID, serializedBidNewPrice);
+    return socketClient.communicate(networkRequest, networkRequest1);
   }
 
   @Override public String getBidWinner(int productId)
   {
     Gson gson = new Gson();
     String serializedWinner = gson.toJson(productId);
-    NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETBIDWINNER, String.valueOf(productId));
+    NetworkRequest networkRequest = new NetworkRequest(NetworkType.GETBIDWINNER, serializedWinner);
     return socketClient.communicate(networkRequest);
   }
 

@@ -25,4 +25,5 @@ public enum NetworkType
   REMOVEUSER,
   EDITUSER,
   CHANGETYPE,
+  BID,
 }

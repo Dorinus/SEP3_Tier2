@@ -14,7 +14,7 @@ public class BidService implements IBidService
   @Autowired BidNetworking bidNetworking;
   @Override public boolean bid(int id, int newPrice)
   {
-    return false;
+    return bidNetworking.bid(id, newPrice);
   }
 
   @Override public String getBidWinner(int productId)
