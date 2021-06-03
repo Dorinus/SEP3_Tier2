@@ -20,7 +20,7 @@ public class ProductController
   }
 
   @GetMapping("/activeProducts/{pageNumber}")
-  public Product getActiveProducts(@PathVariable int pageNumber){
+  public List<Product> getActiveProducts(@PathVariable int pageNumber){
     System.out.println("Asking to get all active products");
     return productService.getActiveProducts(pageNumber);
   }

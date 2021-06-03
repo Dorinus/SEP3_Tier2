@@ -15,13 +15,11 @@ public class UserController
    @PostMapping("/login")
   public User validateUser(@RequestBody User user){
      System.out.println("Logging in user " + user);
-     //call tier3 and get the response
      User user1 = userService.validateUser(user);
      if(user1==null){
        System.out.println("user is null");
      }
    return user1;
-
    }
 
 
